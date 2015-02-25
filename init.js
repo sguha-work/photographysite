@@ -16,10 +16,10 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-var server = app.listen(server.ApplicationPortNumber, function () {
+var server1 = app.listen(server.ApplicationPortNumber, function () {
 
-  var host = server.address().address
-  var port = server.address().port
+  var host = server1.address().address
+  var port = server1.address().port
 
   console.log('Example app listening at http://%s:%s', host, port)
 
