@@ -1,6 +1,7 @@
 // this file will hold all the server related values
 module.exports = {
-	ApplicationPortNumber : 8080,
-	ResourcePortNumber    : 8000,
-	CodeBasePortNumber    : 8090
+	ApplicationPortNumber : 8060,
+	ResourcePortNumber    : 8070,
+	CodeBasePortNumber    : 8080,
+	ImagesPortNumber      : 8090
 }

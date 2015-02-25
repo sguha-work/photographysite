@@ -13,6 +13,7 @@ var express              = require('express');
 var application_main     = express();
 var application_resource = express();
 var application_codebase = express();
+var application_images   = express();
 
 application_main.get('/', function (req, res) {
   res.send('application server');
@@ -22,6 +23,9 @@ application_resource.get('/', function (req, res) {
 });
 application_codebase.get('/', function (req, res) {
   res.send('codebase server');
+});
+application_images.get('/', function (req, res) {
+  res.send('Image server');
 });
 
 
@@ -38,4 +42,8 @@ var server_resource = application_resource.listen(server.ResourcePortNumber, fun
 
 var server_codebase = application_codebase.listen(server.CodeBasePortNumber, function () {
    console.log('Codebase server listening at %s',  server.CodeBasePortNumber)
+});
+
+var server_images = application_images.listen(server.ImagesPortNumber, function () {
+   console.log('Image server listening at %s',  server.ImagesPortNumber)
 });
