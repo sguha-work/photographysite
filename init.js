@@ -10,17 +10,20 @@ var constant = require("./constant");
 var server   = require("./server");
 
 var express = require('express');
-var app = express();
+var application_main = express();
+var application_resource = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+application_main.get('/', function (req, res) {
+  res.send('application server');
+});
+application_resource.get('/', function (req, res) {
+  res.send('resource server');
+});
 
-var server1 = app.listen(server.ApplicationPortNumber, function () {
+var server_application = application_main.listen(server.ApplicationPortNumber, function () {
+   console.log('Application server listening at %s',  server.ApplicationPortNumber)
+});
 
-  var host = server1.address().address
-  var port = server1.address().port
-
-  console.log('Example app listening at http://%s:%s', host, port)
-
-})
+var server_resource = application_resource.listen(server.ResourcePortNumber, function () {
+   console.log('Application server listening at %s',  server.ResourcePortNumber)
+});
