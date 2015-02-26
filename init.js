@@ -15,9 +15,17 @@ var application_resource = express();
 var application_codebase = express();
 var application_images   = express();
 
+var frontendInit = require("./Frontend/init");
+
 application_main.get('/', function (req, res) {
-  res.send('application server');
+  var responseObject = frontendInit.processRequest('/');
+  if(responseObject.isFile) {
+  	res.sendfile(responseObject.filePath);	
+  } else {
+  	res.send(responseObject.reponseContent);
+  }
 });
+
 application_resource.get('/', function (req, res) {
   res.send('resource server');
 });
