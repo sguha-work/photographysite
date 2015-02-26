@@ -15,7 +15,7 @@ module.exports = {
 	homePageRequest : function() {
 		var outputObject = {
 			isFile : 1, // determining that the return value holds a file path and the response will be a file
-			filePath : 'Frontend/main_site/html/index.html'
+			filePath : 'Frontend/MainSite/html/index.html'
 		};
 		return outputObject;
 	}

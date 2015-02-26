@@ -2,8 +2,8 @@
 
 
 module.exports = {
-	mainSite  : require("./main_site/init"),
-	adminSite : require("./admin_panel/init"),
+	mainSite  : require("./MainSite/init"),
+	adminSite : require("./AdminPanel/init"),
 	processRequest : function(requestURL) {
 		if(requestURL == '/') {
 			return this.homePageRequest('main');
