@@ -17,10 +17,19 @@ var application_images   = express();
 
 var frontendInit = require("./Frontend/init");
 
+var optionsForSendFile = {
+    root: __dirname + '/',
+    dotfiles: 'deny',
+    headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+    }
+  };
 application_main.get('/', function (req, res) {
   var responseObject = frontendInit.processRequest('/');
+
   if(responseObject.isFile) {
-  	res.sendfile(responseObject.filePath);	
+  	res.sendFile(responseObject.filePath,optionsForSendFile);	
   } else {
   	res.send(responseObject.reponseContent);
   }
