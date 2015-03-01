@@ -17,6 +17,7 @@ module.exports = {
 			isFile : 1, // determining that the return value holds a file path and the response will be a file
 			filePath : 'Frontend/AdminPanel/html/index.html'
 		};
+		console.log("Adminpanel home page request processed");
 		return outputObject;
 	}
 }

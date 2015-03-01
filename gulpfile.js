@@ -16,12 +16,12 @@ gulp.task('default', ['scripts'], function() {
 });
 
 // default gulp task
-// gulp.task('default', ['scripts'], function() {
+gulp.task('default', ['scripts'], function() {
    
-//   // watch for JS changes
-//   gulp.watch('./Frontend/MainSite/js/dev/**/*.js', function() {
-//     gulp.run('scripts');
-//   });
+  // watch for JS changes
+  gulp.watch('./Frontend/MainSite/js/dev/**/*.js', function() {
+    gulp.run('scripts');
+  });
  
   
-// });
+});
