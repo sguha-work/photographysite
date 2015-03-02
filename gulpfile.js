@@ -1,4 +1,5 @@
 var gulp = require('gulp'); 
+var watch = require('gulp-watch');
 // include plug-ins
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -41,10 +42,10 @@ gulp.task('ADMIN_PANEL_HTML_MINIFIER', function() {
 gulp.task('default', ['MAIN_SITE_JAVASCRIPT_MINIFIER', 'MAIN_SITE_HTML_MINIFIER', 'ADMIN_PANEL_JAVASCRIPT_MINIFIER','ADMIN_PANEL_HTML_MINIFIER'], function() {
    
   // watch for JS changes
-  gulp.watch('./Frontend/MainSite/js/dev/**/*.js', ['MAIN_SITE_JAVASCRIPT_MINIFIER']);
-  gulp.watch('./Frontend/AdminPanel/js/dev/**/*.js', ['ADMIN_PANEL_JAVASCRIPT_MINIFIER']);
+  gulp.watch('Frontend/MainSite/js/dev/**/*.js', ['MAIN_SITE_JAVASCRIPT_MINIFIER']);
+  gulp.watch('Frontend/AdminPanel/js/dev/**/*.js', ['ADMIN_PANEL_JAVASCRIPT_MINIFIER']);
   //watch the html changes
-  gulp.watch('./Frontend/MainSite/html/dev/**/*.html', ['MAIN_SITE_HTML_MINIFIER']);
-  gulp.watch('./Frontend/AdminPanel/html/dev/**/*.html', ['ADMIN_PANEL_HTML_MINIFIER']);
+  gulp.watch('Frontend/MainSite/html/dev/**/*.html', ['MAIN_SITE_HTML_MINIFIER']);
+  gulp.watch('Frontend/AdminPanel/html/dev/**/*.html', ['ADMIN_PANEL_HTML_MINIFIER']);
   
 });
