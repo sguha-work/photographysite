@@ -17,6 +17,7 @@ module.exports = {
 			isFile : 1, // determining that the return value holds a file path and the response will be a file
 			filePath : 'Frontend/MainSite/html/index.html'
 		};
+		console.log("Mainsite home page request processed");
 		return outputObject;
 	}
 }
