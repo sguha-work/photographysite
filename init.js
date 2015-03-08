@@ -27,7 +27,6 @@ var optionsForSendFile = {
   };
 application_main.get('/', function (req, res) {
   var responseObject = frontendInit.processRequest('/');
-
   if(responseObject.isFile) {
   	res.sendFile(responseObject.filePath,optionsForSendFile);	
   } else {
